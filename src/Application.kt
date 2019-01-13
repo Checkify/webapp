@@ -31,6 +31,14 @@ fun Application.module(testing: Boolean = false) {
             call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
         }
 
+        get("/setup") {
+            call.respondText("SETUP", contentType = ContentType.Text.Plain)
+        }
+
+        post("/event") {
+            call.respondText("EVENT Received", contentType = ContentType.Text.Plain)
+        }
+
         post("/accesstoken") {
             call.respond(FreeMarkerContent("accesstoken.ftl", mapOf("accessToken" to "qwe")))
         }
