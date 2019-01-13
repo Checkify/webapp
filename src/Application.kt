@@ -41,13 +41,16 @@ fun Application.module(testing: Boolean = false) {
 
         post("/event") {
             call.respondText("EVENT Received", contentType = ContentType.Text.Plain)
-            logger.info(call.receiveText())
+            val body = call.receiveText()
+            logger.info(body)
+            println("/event : $body")
         }
 
         post("/accesstoken") {
             call.respond(FreeMarkerContent("accesstoken.ftl", mapOf("accessToken" to "qwe")))
             val body = call.receiveText()
             logger.info(body)
+            println("accesstoken : $body")
         }
     }
 }
