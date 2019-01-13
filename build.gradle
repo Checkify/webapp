@@ -11,8 +11,9 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
+task stage {
+    dependsOn installDist
+}
 
 group 'webapp'
 version '0.0.1'
