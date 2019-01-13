@@ -11,10 +11,9 @@ import com.fasterxml.jackson.databind.*
 import io.ktor.jackson.*
 import io.ktor.features.*
 import org.slf4j.Logger
-import sun.jvm.hotspot.HelloWorld
 import org.slf4j.LoggerFactory
 
-private val logger : Logger = LoggerFactory.getLogger(Application::class.java);
+private val logger: Logger = LoggerFactory.getLogger(Application::class.java)
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
