@@ -11,6 +11,9 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 group 'webapp'
 version '0.0.1'
 mainClassName = "io.ktor.server.netty.EngineMain"
